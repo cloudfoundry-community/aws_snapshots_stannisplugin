@@ -19,6 +19,8 @@ module Stannis
       url = "#{@uri}/upload/#{bosh_really_uuid}/deployments/#{deployment_name}/data/#{label}"
       collector = ::RestClient::Resource.new(url, @username, @password)
       collector.post(upload_data)
+    rescue RestClient::ResourceNotFound => e
+      $stderr.puts "Failed to upload to #{url}: #{e.inspect}"
     end
   end
 end
