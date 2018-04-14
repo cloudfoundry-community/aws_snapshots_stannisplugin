@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 gem "fog"
 gem "activesupport"
 gem "actionview"
-gem "json_pure"
 gem "rest-client"
 group :test do
   gem "bundler", "~> 1.10"
